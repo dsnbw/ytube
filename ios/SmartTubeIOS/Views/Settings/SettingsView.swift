@@ -50,6 +50,7 @@ public struct SettingsView: View {
             #if os(macOS)
             experimentalSection
             #endif
+            updatesSection
             aboutSection
         }
         #if os(macOS)
@@ -435,6 +436,44 @@ public struct SettingsView: View {
 
     // MARK: - About
 
+    // MARK: - App Updates (GitHub)
+
+    private var updatesSection: some View {
+        Section("Cập nhật ứng dụng") {
+            LabeledContent("Phiên bản", value: "v32.72 (Build 3272)")
+
+            Button {
+                Task {
+                    await AppUpdaterService.shared.checkForUpdates(manual: true)
+                }
+            } label: {
+                HStack {
+                    Label("Kiểm tra cập nhật từ GitHub", systemImage: "arrow.triangle.2.circlepath")
+                    Spacer()
+                    if AppUpdaterService.shared.isChecking {
+                        ProgressView()
+                    }
+                }
+            }
+            .disabled(AppUpdaterService.shared.isChecking)
+
+            if let msg = AppUpdaterService.shared.checkError {
+                Text(msg)
+                    .font(.caption)
+                    .foregroundStyle(AppUpdaterService.shared.updateAvailable ? Color.green : Color.secondary)
+            }
+
+            if AppUpdaterService.shared.updateAvailable {
+                Button {
+                    AppUpdaterService.shared.performUpdate()
+                } label: {
+                    Label("Cài đặt bản mới (\(AppUpdaterService.shared.latestVersion))", systemImage: "arrow.down.circle.fill")
+                        .foregroundStyle(Color.red)
+                }
+            }
+        }
+    }
+
     private var aboutSection: some View {
         @Bindable var store = store
         return Section {
@@ -451,7 +490,7 @@ public struct SettingsView: View {
                 Label("View on GitHub", systemImage: "chevron.left.forwardslash.chevron.right")
             }
             #else
-            Link(destination: URL(string: "https://github.com/milika/SmartTubeIOS")!) {
+            Link(destination: URL(string: "https://github.com/dsnbw/ytube")!) {
                 Label("View on GitHub", systemImage: "chevron.left.forwardslash.chevron.right")
             }
             #endif
@@ -490,7 +529,7 @@ public struct SettingsView: View {
 private struct GitHubQRView: View {
     @Environment(\.dismiss) private var dismiss
 
-    private let githubURL = "https://github.com/milika/SmartTubeIOS"
+    private let githubURL = "https://github.com/dsnbw/ytube"
 
     var body: some View {
         ZStack(alignment: .topTrailing) {

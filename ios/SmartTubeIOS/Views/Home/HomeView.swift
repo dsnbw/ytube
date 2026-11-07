@@ -28,6 +28,8 @@ public struct HomeView: View {
     @State private var selectedPlaylist: Video?
     @State private var shortsPresentation: ShortsPresentation?
     @State private var channelDestination: ChannelDestination?
+    @State private var showSearch = false
+    @State private var showSettings = false
     /// #62: nil = show every subscribed channel's videos. Session-only (not persisted
     /// to AppSettings) — reset when the Subscriptions videoGroups reload from scratch,
     /// same lifetime as a search filter rather than a durable preference.
@@ -77,6 +79,10 @@ public struct HomeView: View {
 
     public var body: some View {
         VStack(spacing: 0) {
+            #if os(iOS)
+            YouTubeHeaderView(showSearch: $showSearch, showSettings: $showSettings)
+            AppUpdateBannerView()
+            #endif
             chipBar
             #if !os(tvOS)
             Divider()

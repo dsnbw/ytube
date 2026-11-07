@@ -36,10 +36,16 @@ let videoGridRowSpacing: CGFloat = 40
 #else
 let videoGridRowSpacing: CGFloat = 12
 
-/// Fixed (not adaptive) columns avoid the rotation hit-test mismatch of issue #82.
+/// Dynamic, screen-responsive columns to match native YouTube and eliminate squished/broken layouts.
 func videoGridColumns(_ settings: AppSettings, landscape: Bool) -> [GridItem] {
+    #if os(iOS)
+    let bounds = UIScreen.main.bounds
+    let currentW = landscape ? max(bounds.width, bounds.height) : min(bounds.width, bounds.height)
+    let count = DeviceScreenMetrics.adaptiveColumns(for: currentW)
+    #else
     let count = landscape ? settings.gridColumnsLandscape : settings.gridColumnsPortrait
-    return Array(repeating: GridItem(.flexible(), spacing: videoGridRowSpacing), count: count)
+    #endif
+    return Array(repeating: GridItem(.flexible(), spacing: videoGridRowSpacing), count: max(1, count))
 }
 #endif
 

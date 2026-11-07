@@ -1,3 +1,4 @@
+import SmartTubeCompatibility
 import OSLog
 import SmartTubeIOSCore
 import SwiftUI
@@ -43,7 +44,7 @@ public struct RootView: View {
             #endif
         }
         .environment(\.isLandscapeLayout, isLandscapeLayout)
-        .onGeometryChange(for: Bool.self) { $0.size.width > $0.size.height } action: { isLandscapeLayout = $0 }
+        .compatOnOrientationOrSizeChange { size in isLandscapeLayout = size.width > size.height }
         .tint(store.settings.accentColor.color)
         .preferredColorScheme(store.settings.themeName.colorScheme)
         #if !os(tvOS) && ENABLE_DOWNLOADS
@@ -191,7 +192,7 @@ struct MainTabView: View {
         #endif
         TabView(selection: $selectedTab) {
             ForEach(AppSection.allCases) { section in
-                NavigationStack { section.destination(api: api) }
+                CompatNavigationStack { section.destination(api: api) }
                     // Capture the bottom safe-area inset as seen from inside the tab
                     // (UITabBarController sets this to tab-bar height + home-indicator).
                     // The value is propagated up to tabBarBottomInset via PreferenceKey
@@ -361,7 +362,7 @@ struct MainTVTabView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             ForEach(AppSection.allCases) { section in
-                NavigationStack { section.destination(api: api) }
+                CompatNavigationStack { section.destination(api: api) }
                     .tabItem {
                         Label(section.rawValue, systemImage: section.icon)
                     }
@@ -417,7 +418,7 @@ struct MainSidebarView: View {
                     .padding(.bottom, 8)
                 }
             } detail: {
-                NavigationStack { (selectedSection ?? .home).destination(api: api) }
+                CompatNavigationStack { (selectedSection ?? .home).destination(api: api) }
             }
             .environment(searchVM)
             .onReceive(NotificationCenter.default.publisher(for: .activeChannelDidChange)) { _ in

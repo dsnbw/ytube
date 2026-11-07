@@ -421,7 +421,8 @@ public struct VideoCardView: View {
     // MARK: Grid layout (default)
 
     private var gridLayout: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 8) {
+            // 16:9 Thumbnail container with rounded corners
             Color.clear
                 .aspectRatio(16 / 9, contentMode: .fit)
                 .overlay(thumbnailView.clipped())
@@ -430,7 +431,7 @@ public struct VideoCardView: View {
                         watchProgressBar(progress)
                     }
                 }
-                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .overlay(alignment: .bottomTrailing) {
                     let dur = video.formattedDuration
                     if !dur.isEmpty { durationBadge(dur) }
@@ -445,32 +446,74 @@ public struct VideoCardView: View {
                     if WatchLaterMembershipStore.shared.contains(video.id) { watchLaterSavedBadge }
                 }
 
-            VStack(alignment: .leading, spacing: 2) {
-                Text(displayTitle)
-                    .font(.subheadline.weight(.medium))
-                    .lineLimit(2, reservesSpace: true)
-                    .accessibilityIdentifier("video.card.title")
-                Text(video.channelTitle)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                    .onTapGesture {
-                        guard let channelId = video.channelId, !channelId.isEmpty else { return }
-                        NotificationCenter.default.post(
-                            name: .openChannel,
-                            object: nil,
-                            userInfo: ["channelId": channelId, "channelTitle": video.channelTitle]
-                        )
-                    }
-                    .accessibilityIdentifier("video.card.channelName")
-                HStack(spacing: 4) {
-                    let vc = video.formattedViewCount
-                    if !vc.isEmpty { Text(vc) }
+            // Authentic native YouTube layout: Avatar + Title & Metadata + 3-dots Menu
+            HStack(alignment: .top, spacing: 10) {
+                // Channel Circular Avatar
+                ZStack {
+                    Circle()
+                        .fill(Color.secondary.opacity(0.18))
+                        .frame(width: 36, height: 36)
+                    Text(String(video.channelTitle.prefix(1)).uppercased())
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundColor(.primary)
                 }
-                .font(.caption2)
-                .foregroundStyle(.tertiary)
+                .onTapGesture {
+                    guard let channelId = video.channelId, !channelId.isEmpty else { return }
+                    NotificationCenter.default.post(
+                        name: .openChannel,
+                        object: nil,
+                        userInfo: ["channelId": channelId, "channelTitle": video.channelTitle]
+                    )
+                }
+                .accessibilityIdentifier("video.card.channelAvatar")
+
+                // Video Title, Channel Name and Views
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(displayTitle)
+                        .font(.system(size: 14, weight: .medium))
+                        .lineLimit(2)
+                        .foregroundColor(.primary)
+                        .accessibilityIdentifier("video.card.title")
+
+                    HStack(spacing: 4) {
+                        Text(video.channelTitle)
+                            .lineLimit(1)
+                            .onTapGesture {
+                                guard let channelId = video.channelId, !channelId.isEmpty else { return }
+                                NotificationCenter.default.post(
+                                    name: .openChannel,
+                                    object: nil,
+                                    userInfo: ["channelId": channelId, "channelTitle": video.channelTitle]
+                                )
+                            }
+
+                        let vc = video.formattedViewCount
+                        if !vc.isEmpty {
+                            Text("•")
+                            Text(vc)
+                        }
+                        if let label = uploadDateLabel {
+                            Text("•")
+                            Text(label)
+                        }
+                    }
+                    .font(.system(size: 12))
+                    .foregroundColor(.secondary)
+                    .lineLimit(1)
+                    .accessibilityIdentifier("video.card.metadata")
+                }
+
+                Spacer(minLength: 2)
+
+                // 3-dots Context Menu Icon
+                Image(systemName: "ellipsis")
+                    .rotationEffect(.degrees(90))
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundColor(.secondary)
+                    .padding(.top, 4)
+                    .padding(.trailing, 2)
             }
-            .padding(.horizontal, 2)
+            .padding(.horizontal, 4)
         }
         // #153: without an explicit content shape, SwiftUI's default hit-test area for this
         // compound view can leave gaps (the VStack spacing, padding) untappable — invisible on

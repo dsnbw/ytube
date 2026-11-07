@@ -6,13 +6,13 @@
 [![Android Support](https://img.shields.io/badge/Android-4.4%20%E2%86%92%2015%2B-green?logo=android)](https://github.com/dsnbw/ytube/releases)
 [![License](https://img.shields.io/badge/License-GPLv3-red)](LICENSE)
 
-An advanced YouTube client re-architected and optimized for **legacy iPhone/iPad (iOS 12 – 16)**, **modern iOS (iOS 17 – 18+)**, and **all Android devices (legacy TV boxes, Smart TVs, tablets, phones)**.
+An advanced YouTube client re-architected with an **authentic native YouTube UI**, automatic device & screen resolution detection, and built-in **GitHub Releases Auto-Updater**. Fully optimized for **legacy iPhone/iPad (iOS 12 – 16)**, **modern iOS (iOS 17 – 18+)**, and **all Android devices (legacy TV boxes, Smart TVs, tablets, phones)**.
 
 *👉 [Đọc bản Tiếng Việt tại đây (Vietnamese README)](README_VI.md)*
 
 ---
 
-## 🚀 Quick Download Links
+## 🚀 Quick Download Links (Latest v32.72)
 
 | Platform | Target Devices / Versions | Format | Direct Download |
 | :--- | :--- | :---: | :---: |
@@ -24,14 +24,28 @@ An advanced YouTube client re-architected and optimized for **legacy iPhone/iPad
 
 ---
 
-## ✨ Features
+## 🎨 Authentic YouTube UI & Adaptive Layout Engine
 
-- **Ad-Free:** 100% video ads, interstitials, and banner ads blocked.
-- **SponsorBlock & DeArrow:** Automatically skips sponsored segments, intros, and reminders; restores clean titles and thumbnails.
-- **Memory Pressure Protection:** Optimized AVPlayer buffer constraints preventing memory overflows on 1GB RAM devices (iPad Air 1, iPad mini 2, iPhone 6).
-- **Background Playback & PiP:** Continuous audio playback with screen locked and Picture-in-Picture window.
-- **Adaptive Video Resolution:** From lightweight 720p/1080p for older chips up to 4K/8K HDR 60fps on modern hardware.
-- **No Jailbreak / Root Required:** Easy sideloading and APK installation.
+1. **Native YouTube Design:**
+   - **Header Bar:** Iconic red YouTube emblem, SmartTube branding, AirPlay/Cast button, Notification bell, Search button, and Account avatar.
+   - **Topic Filter Pills:** Smooth scrolling horizontal category chips ("All", "Music", "Gaming", "News", "Live", "Podcasts", "Recently uploaded", "Watched").
+   - **Redesigned Video Card:** 16:9 thumbnail with rounded corners, live/duration badges, red watch progress bar, circular channel avatar, 2-line title, metadata row, and 3-dots action menu (`...`).
+
+2. **Automatic Screen Detection (`DeviceScreenMetrics`):**
+   - **Phones (< 520pt):** 1-column full-width edge-to-edge layout matching the official YouTube mobile app. Zero squeezed text or tiny thumbnails.
+   - **Tablets / Landscape (520pt – 840pt):** Balanced 2-column grid.
+   - **iPad Air / iPad Pro (840pt – 1240pt):** Clean 3–4 column grid perfectly proportioned to the display size.
+   - Supports orientation changes and iPad Split View seamlessly.
+
+---
+
+## 🔄 Built-in GitHub Auto-Updater
+
+- **Automatic Startup Checks:** Periodically queries GitHub Releases in the background without affecting app performance.
+- **In-App Update Banner:** Prompts users when a new release is available with version and changelog info.
+- **1-Click TrollStore Installation:** Directly invokes `trollstore://install?url=...` for seamless permanent installation on supported iOS devices.
+- **Android In-App Updater:** Downloads APKs directly and prompts package installation.
+- **Manual Check in Settings:** Settings -> App Updates -> Check for updates anytime.
 
 ---
 
@@ -47,31 +61,6 @@ An advanced YouTube client re-architected and optimized for **legacy iPhone/iPad
 
 - 🍏 **[iOS Installation Guide (TrollStore, Sideloadly, 3uTools, AltStore)](docs/INSTALL_IOS.md)**
 - 🤖 **[Android Installation Guide (Smart TV, TV Box, Mobile)](docs/INSTALL_ANDROID.md)**
-
----
-
-## 🏗️ Repository Architecture
-
-```
-ytube/
-├── ios/
-│   ├── Compatibility/         # iOS 12-16 legacy backport layer (ObservableCompat, NavigationCompat, MemoryOptimizer)
-│   ├── SmartTubeIOSCore/      # Foundation models, InnerTube API, SponsorBlock, TokenManager
-│   ├── SmartTubeIOS/          # SwiftUI views, ViewModels, Resources, yt.solver
-│   ├── SmartTubeApp/          # App entrypoint, Assets, Configs (Legacy & Modern xcconfig)
-│   └── Package.swift          # Cross-platform SwiftPM definition
-├── android/
-│   ├── app/                   # Android app sources & AndroidManifest
-│   ├── build.gradle           # Multi-ABI Gradle configuration
-│   └── gradle.properties
-├── tools/
-│   ├── xtool/                 # IPA packaging configurations and scripts
-│   ├── rea/                   # REA YouTube cipher and InnerTube inspector
-│   └── craft-anything/        # Multi-target UI layout fidelity tester
-├── docs/                      # Comprehensive setup & installation guides
-├── releases/                  # Release packages (.ipa and .apk)
-└── .github/workflows/         # Automated GitHub Actions CI/CD workflows
-```
 
 ---
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 SmartTube IPA Packaging Tool
-Constructs standardized .ipa bundles for iOS/iPadOS sideloading and TrollStore.
+Constructs standardized .ipa bundles for iOS/iPadOS sideloading, AltStore, and TrollStore.
+Version 5.2 / Build 3272
 """
 
 import os
@@ -10,7 +11,7 @@ import shutil
 import zipfile
 import plistlib
 
-def package_ipa(app_dir, output_ipa, bundle_id="com.dsnbw.smarttube", display_name="SmartTube", version="5.1"):
+def package_ipa(app_dir, output_ipa, bundle_id="com.dsnbw.smarttube", display_name="SmartTube", version="5.2", build="3272"):
     print(f"[*] Packaging IPA: {output_ipa}")
     temp_dir = "temp_payload"
     payload_dir = os.path.join(temp_dir, "Payload")
@@ -32,34 +33,33 @@ def package_ipa(app_dir, output_ipa, bundle_id="com.dsnbw.smarttube", display_na
 
     # Ensure Info.plist exists
     info_plist_path = os.path.join(app_target_dir, "Info.plist")
-    if not os.path.exists(info_plist_path):
-        plist_data = {
-            "CFBundleDevelopmentRegion": "en",
-            "CFBundleDisplayName": display_name,
-            "CFBundleExecutable": display_name.replace(" ", ""),
-            "CFBundleIdentifier": bundle_id,
-            "CFBundleInfoDictionaryVersion": "6.0",
-            "CFBundleName": display_name,
-            "CFBundlePackageType": "APPL",
-            "CFBundleShortVersionString": version,
-            "CFBundleVersion": "1",
-            "LSRequiresIPhoneOS": True,
-            "UIBackgroundModes": ["audio"],
-            "UIRequiredDeviceCapabilities": ["arm64"],
-            "UISupportedInterfaceOrientations": [
-                "UIInterfaceOrientationPortrait",
-                "UIInterfaceOrientationLandscapeLeft",
-                "UIInterfaceOrientationLandscapeRight"
-            ],
-            "UISupportedInterfaceOrientations~ipad": [
-                "UIInterfaceOrientationPortrait",
-                "UIInterfaceOrientationPortraitUpsideDown",
-                "UIInterfaceOrientationLandscapeLeft",
-                "UIInterfaceOrientationLandscapeRight"
-            ]
-        }
-        with open(info_plist_path, "wb") as f:
-            plistlib.dump(plist_data, f)
+    plist_data = {
+        "CFBundleDevelopmentRegion": "en",
+        "CFBundleDisplayName": display_name,
+        "CFBundleExecutable": display_name.replace(" ", ""),
+        "CFBundleIdentifier": bundle_id,
+        "CFBundleInfoDictionaryVersion": "6.0",
+        "CFBundleName": display_name,
+        "CFBundlePackageType": "APPL",
+        "CFBundleShortVersionString": version,
+        "CFBundleVersion": build,
+        "LSRequiresIPhoneOS": True,
+        "UIBackgroundModes": ["audio"],
+        "UIRequiredDeviceCapabilities": ["arm64"],
+        "UISupportedInterfaceOrientations": [
+            "UIInterfaceOrientationPortrait",
+            "UIInterfaceOrientationLandscapeLeft",
+            "UIInterfaceOrientationLandscapeRight"
+        ],
+        "UISupportedInterfaceOrientations~ipad": [
+            "UIInterfaceOrientationPortrait",
+            "UIInterfaceOrientationPortraitUpsideDown",
+            "UIInterfaceOrientationLandscapeLeft",
+            "UIInterfaceOrientationLandscapeRight"
+        ]
+    }
+    with open(info_plist_path, "wb") as f:
+        plistlib.dump(plist_data, f)
 
     # Create dummy executable if missing for packaging verification
     binary_path = os.path.join(app_target_dir, display_name.replace(" ", ""))
