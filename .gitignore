@@ -27,6 +27,7 @@ xcuserdata/
 *.xccheckout
 *.moved-aside
 *.ipa
+!releases/*.ipa
 *.dSYM.zip
 *.dSYM
 
@@ -43,6 +44,7 @@ android/build/
 android/app/build/
 android/captures/
 *.apk
+!releases/*.apk
 *.aab
 local.properties
 .gradle/
