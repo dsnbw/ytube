@@ -6,66 +6,73 @@
 [![Android Support](https://img.shields.io/badge/Android-4.4%20%E2%86%92%2015%2B-green?logo=android)](https://github.com/dsnbw/ytube/releases)
 [![License](https://img.shields.io/badge/License-GPLv3-red)](LICENSE)
 
-Phiên bản **SmartTube** được thiết kế lại giao diện **chuẩn theo nguyên bản YouTube**, tự động nhận diện phần cứng/màn hình để tối ưu bố cục và tích hợp tính năng **Tự động Cập nhật phiên bản mới trực tiếp từ GitHub Releases**. Hỗ trợ cả **iPhone/iPad đời cũ (iOS 12 – 16)**, **thiết bị iOS hiện đại (iOS 17 – 18+)** và **mọi dòng máy Android (TV Box cũ, Smart TV, Tablet, Phone)**.
+Phiên bản **SmartTube** được phân tách và tối ưu hóa chuyên biệt theo đúng chuẩn Google YouTube gốc: **Giao diện Cảm Ứng (Touch UI) cho Điện thoại & Máy tính bảng** và **Giao diện Remote (10-Foot UI) cho Tivi & TV Box**.
 
 ---
 
-## 🚀 Tải Xuống Phiên Bản Mới Nhất (Direct Download Links)
+## 🚀 Tải Xuống Phiên Bản v32.72 (Đúng Với Thiết Bị Của Bạn)
 
-| Nền tảng | Dòng máy / Phiên bản | Định dạng | Tải trực tiếp |
-| :--- | :--- | :---: | :---: |
-| **iOS / iPadOS Đời Cũ** | iPad Mini 2/3/4, iPad Air 1/2, iPhone 5s, 6, 6s, 7, 8, X (iOS 12.0 – 16.7) | `.ipa` | [📥 Tải SmartTube-Legacy-iOS12-16.ipa](https://github.com/dsnbw/ytube/releases) |
-| **iOS / iPadOS Đời Mới** | iPhone 11 trở lên, iPad Pro/Air mới (iOS 17.0 – 18.0+) | `.ipa` | [📥 Tải SmartTube-Modern-iOS17+.ipa](https://github.com/dsnbw/ytube/releases) |
-| **Android Universal** | Tương thích mọi dòng Android TV, TV Box, Tablet, Smartphone | `.apk` | [📥 Tải SmartTube_Universal.apk](https://github.com/dsnbw/ytube/releases) |
-| **Android TV Cũ (32-bit)** | TV Box cũ, Tablet cũ chạy chip 32-bit (Android 4.4, 5.0, 7.0, 8.0) | `.apk` | [📥 Tải SmartTube_ARMv7-32bit.apk](https://github.com/dsnbw/ytube/releases) |
-| **Android 64-bit** | Smart TV Sony/TCL/Xiaomi mới, Chromecast with Google TV, Phone mới | `.apk` | [📥 Tải SmartTube_ARM64-64bit.apk](https://github.com/dsnbw/ytube/releases) |
+### 📱 1. Dành Cho ĐIỆN THOẠI & MÁY TÍNH BẢNG (Giao diện chuẩn Google YouTube Mobile)
+*Dành cho smartphone Samsung, Xiaomi, Oppo, Pixel... và máy tính bảng Android.*
 
----
-
-## 🎨 Giao Diện Nguyên Bản YouTube & Tự Động Thích Ứng Màn Hình
-
-1. **Giao Diện Chuẩn YouTube:**
-   - **Thanh điều hướng trên (Top Bar):** Logo YouTube đỏ rực, tên thương hiệu SmartTube, nút Cast (AirPlay), Chuông thông báo, Kính lúp tìm kiếm và Avatar tài khoản.
-   - **Thanh lọc chủ đề (Topic Filter Chips):** Danh sách chip bo góc ngang ("Tất cả", "Âm nhạc", "Trò chơi", "Tin tức", "Trực tiếp", "Mới tải lên", "Đã xem", v.v.).
-   - **Thẻ Video (Video Card) thiết kế mới:** 
-     - Thumbnail tỷ lệ chuẩn 16:9 bo góc mềm mại, hiển thị thời lượng video góc dưới phải, nhãn "TRỰC TIẾP" góc trên trái.
-     - Thanh tiến trình xem màu đỏ nằm ngay mép dưới thumbnail.
-     - Hàng thông tin chi tiết: Avatar kênh tròn 36pt, tiêu đề video đậm 2 dòng, tên kênh, số lượt xem và thời gian đăng tải.
-     - Nút menu ngữ cảnh 3 chấm (`...`) để Lưu xem sau, Lưu danh sách phát, Tải về hoặc Ẩn video.
-
-2. **Công Nghệ Nhận Diện Màn Hình Thông Minh (`DeviceScreenMetrics`):**
-   - **Điện thoại (Màn hình < 520pt):** Tự động chuyển sang bố cục **1 cột full màn hình** (giống hệt ứng dụng YouTube trên iPhone/Android Phone), loại bỏ hoàn toàn hiện tượng vỡ chữ, đè chữ hay thumbnail bị ép nhỏ.
-   - **Máy tính bảng & iPhone xoay ngang (520pt – 840pt):** Tự động dàn **2 cột** cân đối.
-   - **iPad Air / iPad Pro / TV (840pt – 1240pt):** Tự động dàn **3 – 4 cột** tối ưu không gian hiển thị, không bị co kéo hay lệch khung hình.
-   - Hỗ trợ hoàn hảo tính năng xoay màn hình và iPad Split View (chia đôi màn hình).
+| Bản cài đặt | Dòng máy / Kiến trúc | Tải trực tiếp |
+| :--- | :--- | :---: |
+| **`SmartTube_v32.72_Mobile_Phone_Tablet.apk`** | **Mọi Điện thoại & Tablet Android** (Khuyên dùng) | [📥 Tải về](https://github.com/dsnbw/ytube/releases/download/v32.72/SmartTube_v32.72_Mobile_Phone_Tablet.apk) |
+| **`SmartTube_v32.72_Mobile_arm64.apk`** | Điện thoại & Tablet 64-bit hiện đại | [📥 Tải về](https://github.com/dsnbw/ytube/releases/download/v32.72/SmartTube_v32.72_Mobile_arm64.apk) |
+| **`SmartTube_v32.72_Mobile_armeabi-v7a.apk`** | Điện thoại & Tablet 32-bit đời cũ (Android 4.4 – 9.0) | [📥 Tải về](https://github.com/dsnbw/ytube/releases/download/v32.72/SmartTube_v32.72_Mobile_armeabi-v7a.apk) |
 
 ---
 
-## 🔄 Tính Năng Tự Động Cập Nhật Trực Tiếp Từ GitHub (Auto-Updater)
+### 📺 2. Dành Cho TIVI & ANDROID TV BOX (Giao diện điều khiển bằng Remote)
+*Dành cho Smart TV Sony, TCL, Xiaomi, Chromecast with Google TV, Fire TV, Mi Box, TV Box.*
 
-- **Tự động kiểm tra trong nền khi mở ứng dụng:** Ứng dụng tự động kết nối API GitHub Releases để kiểm tra phiên bản mới nhất mà không gây trễ giao diện.
-- **Banner thông báo cập nhật:** Khi phát hiện phiên bản mới, banner xuất hiện tinh tế ở đầu trang: "Đã có bản cập nhật mới (v32.72) - Cập nhật ngay".
-- **Cập nhật 1 chạm cho iOS (TrollStore):** Hỗ trợ gọi trực tiếp URL scheme `trollstore://install?url=...` để TrollStore tự tải và cài đặt vĩnh viễn trong 1 nốt nhạc!
-- **Cập nhật tự động cho Android:** Tự động tải file APK và gọi trình cài đặt hệ thống.
-- **Kiểm tra thủ công trong Cài đặt:** Vào mục **Cài đặt** -> **Cập nhật ứng dụng** -> Bấm **"Kiểm tra cập nhật từ GitHub"** để kiểm tra bất kỳ lúc nào.
+| Bản cài đặt | Dòng máy / Kiến trúc | Tải trực tiếp |
+| :--- | :--- | :---: |
+| **`SmartTube_v32.72_TV_Box_Universal.apk`** | **Mọi dòng Smart TV & TV Box** (Khuyên dùng) | [📥 Tải về](https://github.com/dsnbw/ytube/releases/download/v32.72/SmartTube_v32.72_TV_Box_Universal.apk) |
+| **`SmartTube_v32.72_TV_arm64.apk`** | Smart TV 64-bit đời mới | [📥 Tải về](https://github.com/dsnbw/ytube/releases/download/v32.72/SmartTube_v32.72_TV_arm64.apk) |
+| **`SmartTube_v32.72_TV_armeabi-v7a.apk`** | Android TV Box đời cũ chip 32-bit | [📥 Tải về](https://github.com/dsnbw/ytube/releases/download/v32.72/SmartTube_v32.72_TV_armeabi-v7a.apk) |
+| **`SmartTube_v32.72_TV_x86.apk`** | Trình giả lập PC hoặc chip Intel x86 | [📥 Tải về](https://github.com/dsnbw/ytube/releases/download/v32.72/SmartTube_v32.72_TV_x86.apk) |
 
 ---
 
-## 🛠️ Công Cụ Kỹ Thuật Đã Tích Hợp
+### 🍏 3. Dành Cho IPHONE & IPAD (iOS / iPadOS)
+*Tự động nhận diện: giao diện 1 cột trên iPhone, giao diện đa cột trên iPad.*
 
-- **[`xtool`](https://github.com/xtool-org/xtool):** Toolchain mã nguồn mở cho phép biên dịch và đóng gói `.ipa` độc lập trên Linux, Windows và CI mà không bắt buộc có máy tính macOS.
-- **[`rea`](https://github.com/morluto/rea) (Reverse Engineer Anything):** Bộ công cụ phân tích ngược InnerTube API, giải mã luồng video cipher token và SponsorBlock API.
-- **[`craft-anything`](https://github.com/storytold/craft-anything):** Bộ kiểm thử chuẩn hóa UI và thiết kế đáp ứng trên mọi kích thước màn hình.
+| Bản cài đặt | Phiên bản hệ điều hành | Tải trực tiếp |
+| :--- | :--- | :---: |
+| **`SmartTube-Legacy-iOS12-16.ipa`** | iPad & iPhone đời cũ (iOS 12.0 – 16.7) | [📥 Tải về](https://github.com/dsnbw/ytube/releases/download/v32.72/SmartTube-Legacy-iOS12-16.ipa) |
+| **`SmartTube-Modern-iOS17+.ipa`** | iPhone & iPad đời mới (iOS 17.0 – 18.0+) | [📥 Tải về](https://github.com/dsnbw/ytube/releases/download/v32.72/SmartTube-Modern-iOS17.ipa) |
+
+---
+
+## 🎨 Trải Nghiệm Giao Diện Tương Ứng Với Từng Loại Thiết Bị
+
+1. **Trên Điện Thoại (Phone Mode):**
+   - Thanh điều hướng đáy đầy đủ: **Trang chủ**, **Shorts**, **Kênh đăng ký**, **Bạn**.
+   - Thao tác cảm ứng hoàn chỉnh: Chạm tua 10 giây, vuốt cạnh phải tăng giảm âm lượng, vuốt cạnh trái tăng giảm độ sáng.
+   - Trình phát Shorts cuộn dọc (TikTok/Reels format).
+   - Thẻ video dọc 1 cột tràn viền, Avatar kênh tròn 36pt, tiêu đề 2 dòng, đầy đủ số lượt xem và thời gian đăng tải.
+2. **Trên Máy Tính Bảng (Tablet Mode):**
+   - Tự động chuyển đổi dạng lưới 2 đến 3 cột cân đối.
+   - Thanh điều hướng rộng, bố cục chia đôi màn hình khi xem video và đọc bình luận.
+3. **Trên Tivi (TV Mode):**
+   - Giao diện 10-foot với các hàng kệ nội dung nằm ngang, tối ưu cho phím điều hướng Remote / D-pad.
+
+---
+
+## 🔄 Tự Động Cập Nhật Trực Tiếp Từ GitHub (Auto-Updater)
+- Tự động nhận diện thiết bị và thông báo khi có bản cập nhật mới trên GitHub.
+- Cập nhật 1 chạm cho iOS (TrollStore) và Android (Tự tải APK).
 
 ---
 
 ## 📖 Hướng Dẫn Cài Đặt Chi Tiết
 
-- 🍏 **[Xem Hướng Dẫn Cài Đặt Chi Tiết Cho iOS (TrollStore, Sideloadly, 3uTools, AltStore)](docs/INSTALL_IOS.md)**
-- 🤖 **[Xem Hướng Dẫn Cài Đặt Chi Tiết Cho Android (TV Box, Smart TV, Mobile)](docs/INSTALL_ANDROID.md)**
+- 🍏 **[Xem Hướng Dẫn Cài Đặt Cho iOS (TrollStore, Sideloadly, 3uTools, AltStore)](docs/INSTALL_IOS.md)**
+- 🤖 **[Xem Hướng Dẫn Cài Đặt Cho Android (Phone, Tablet, Smart TV, USB)](docs/INSTALL_ANDROID.md)**
 
 ---
 
 ## 📜 Giấy Phép (License)
 
-Dự án được phân phối theo giấy phép mã nguồn mở GPL-3.0. Dựa trên thành quả tuyệt vời của cộng đồng **SmartTube** (Yuliskov) và **SmartTubeIOS** (milika).
+Dự án được phân phối theo giấy phép mã nguồn mở GPL-3.0. Dựa trên thành quả của cộng đồng **SmartTube** (Yuliskov), **SmarterTube** (CodeSculptor) và **SmartTubeIOS** (milika).

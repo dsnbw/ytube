@@ -1,21 +1,35 @@
 # SmartTube Installation Packages (File Cài Đặt v32.72)
 
-Thư mục này quản lý các file cài đặt chính thức phiên bản **v32.72** cho cả hệ sinh thái **Apple iOS / iPadOS** và **Android**.
+Phân tách rõ ràng giữa **Bản Điện Thoại / Máy Tính Bảng (Giao diện chuẩn Google YouTube Mobile cảm ứng)** và **Bản Tivi / TV Box (Giao diện điều khiển Remote)**.
 
-## Danh Sách File Cài Đặt (v32.72)
+---
 
-### 1. Dành cho iOS / iPadOS
-- **`SmartTube-Legacy-iOS12-16.ipa`**: Dành cho iPad và iPhone đời cũ (iOS 12.0 – 16.7). Tối ưu RAM, hỗ trợ cài qua TrollStore, Sideloadly, 3uTools, AltStore.
-- **`SmartTube-Modern-iOS17+.ipa`**: Dành cho iPhone và iPad đời mới (iOS 17.0 – 18.0+).
+## 1. 📱 Dành Cho ĐIỆN THOẠI & MÁY TÍNH BẢNG (Mobile Touch UI Chuẩn Google YouTube)
+> **Dành cho:** Samsung, Xiaomi, Oppo, Vivo, Google Pixel, Sony, và tất cả các dòng máy tính bảng Android cảm ứng.
 
-### 2. Dành cho Android
-- **`SmartTube_v32.72_universal.apk`**: Bản đa năng tương thích mọi loại máy Android (TV Box, Smart TV, Tablet, Phone).
-- **`SmartTube_v32.72_armeabi-v7a.apk`**: Bản 32-bit tối ưu riêng cho Android TV Box cũ, Tablet cũ, chip đời cũ.
-- **`SmartTube_v32.72_arm64-v8a.apk`**: Bản 64-bit cho Android TV và điện thoại hiện đại.
-- **`SmartTube_v32.72_x86.apk`**: Bản dành cho giả lập hoặc thiết bị nền tảng x86.
+- **`SmartTube_v32.72_Mobile_Phone_Tablet.apk`**: **Bản khuyên dùng số 1** cho điện thoại và tablet. Giao diện cảm ứng chuẩn YouTube Mobile, thanh điều hướng đáy (Trang chủ, Shorts, Đăng ký, Bạn), vuốt cuộn Shorts dọc, vuốt tăng giảm âm lượng/độ sáng, xoay màn hình tự động.
+- **`SmartTube_v32.72_Mobile_arm64.apk`**: Bản tối ưu riêng cho điện thoại/tablet 64-bit đời mới.
+- **`SmartTube_v32.72_Mobile_armeabi-v7a.apk`**: Bản cho điện thoại/tablet 32-bit đời cũ (Android 4.4 – 9.0).
+
+---
+
+## 2. 📺 Dành Cho TIVI & ANDROID TV BOX (10-Foot UI Chuẩn Điều Khiển Remote)
+> **Dành cho:** Smart TV Sony, TCL, Xiaomi, Casper, Chromecast with Google TV, Fire TV Stick, Mi Box, các loại Android TV Box (Egreat, Tanix, X96...).
+
+- **`SmartTube_v32.72_TV_Box_Universal.apk`**: Bản đa năng cho mọi dòng Smart TV và TV Box (điều khiển bằng Remote / D-pad).
+- **`SmartTube_v32.72_TV_arm64.apk`**: Bản 64-bit cho Smart TV đời mới.
+- **`SmartTube_v32.72_TV_armeabi-v7a.apk`**: Bản 32-bit cho Android TV Box đời cũ.
+- **`SmartTube_v32.72_TV_x86.apk`**: Bản cho giả lập hoặc thiết bị chip Intel x86.
+
+---
+
+## 3. 🍏 Dành Cho iOS / iPadOS (iPhone & iPad Tự Động Thích Ứng)
+- **`SmartTube-Legacy-iOS12-16.ipa`**: Cho iPad và iPhone đời cũ (iOS 12.0 – 16.7). Tự động dàn 1 cột trên iPhone và 2-3 cột trên iPad.
+- **`SmartTube-Modern-iOS17+.ipa`**: Cho iPhone và iPad đời mới (iOS 17.0 – 18.0+).
+
+---
 
 ## Tải Về Trực Tiếp
-Tất cả các file trên được lưu trữ trực tiếp và tải về tốc độ cao tại:
-👉 **https://github.com/dsnbw/ytube/releases/tag/v32.72**
-hoặc ngay trong thư mục:
+👉 **https://github.com/dsnbw/ytube/releases/tag/v32.72**  
+hoặc ngay trong thư mục repository:  
 👉 **https://github.com/dsnbw/ytube/tree/main/releases**
