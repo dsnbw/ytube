@@ -1,0 +1,26 @@
+# xtool configuration for SmartTube Multiplatform
+name: SmartTube
+version: 5.1
+targets:
+  - name: SmartTube-Legacy
+    platform: ios
+    deployment_target: "12.0"
+    scheme: SmartTube
+    bundle_id: com.dsnbw.smarttube.legacy
+    entitlements:
+      - com.apple.security.application-groups: ["group.com.dsnbw.smarttube"]
+      - get-task-allow: true
+    package_path: ../../ios
+
+  - name: SmartTube-Modern
+    platform: ios
+    deployment_target: "17.0"
+    scheme: SmartTube
+    bundle_id: com.dsnbw.smarttube
+    entitlements:
+      - com.apple.security.application-groups: ["group.com.dsnbw.smarttube"]
+      - get-task-allow: true
+    package_path: ../../ios
+
+signing:
+  mode: ad-hoc # Supports TrollStore (no signature needed), Sideloadly (auto-resign), AltStore

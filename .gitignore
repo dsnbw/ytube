@@ -1,0 +1,53 @@
+# Security
+github.md
+*.token
+*.key
+Secrets.xcconfig
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Apple / Xcode
+build/
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# SwiftPM
+.build/
+Packages/
+Package.pins
+Package.resolved
+.swiftpm/xcode
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/captures/
+*.apk
+*.aab
+local.properties
+.gradle/
+
+# Temporary
+milika_SmartTubeIOS/
+tmp/
+*.log

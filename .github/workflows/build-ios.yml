@@ -1,0 +1,40 @@
+name: Build iOS IPAs
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'ios/**'
+      - '.github/workflows/build-ios.yml'
+  workflow_dispatch:
+
+jobs:
+  build-ios:
+    runs-on: macos-14
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app
+
+      - name: Cache SwiftPM Dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ios/.build
+            ~/Library/Developer/Xcode/DerivedData/**/SourcePackages
+          key: spm-${{ runner.os }}-${{ hashFiles('ios/Package.swift') }}
+
+      - name: Build SmartTube iOS (Legacy & Modern)
+        run: |
+          mkdir -p build/artifacts
+          echo "Building SmartTube iOS with compatibility layers..."
+          python3 tools/xtool/package_ipa.py ios/SmartTubeApp build/artifacts/SmartTube-Legacy-iOS12-16.ipa com.dsnbw.smarttube.legacy "SmartTube Legacy" "5.1"
+          python3 tools/xtool/package_ipa.py ios/SmartTubeApp build/artifacts/SmartTube-Modern-iOS17+.ipa com.dsnbw.smarttube "SmartTube" "5.1"
+
+      - name: Upload IPA Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: smarttube-ios-ipas
+          path: build/artifacts/*.ipa

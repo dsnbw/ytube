@@ -1,0 +1,14 @@
+//
+// Legacy.xcconfig - For iPhone and iPad legacy devices (iOS 12.0 - 16.7)
+// Supports A7-A11 chips (iPhone 5s - iPhone X, iPad Air 1/2, iPad mini 2/3/4)
+//
+#include? "Secrets.xcconfig"
+
+IPHONEOS_DEPLOYMENT_TARGET = 12.0
+SWIFT_VERSION = 5.9
+SWIFT_STRICT_CONCURRENCY = minimal
+ENABLE_USER_SCRIPT_SANDBOXING = NO
+MARKETING_VERSION = 5.1-legacy
+CURRENT_PROJECT_VERSION = 1
+PRODUCT_BUNDLE_IDENTIFIER = com.dsnbw.smarttube.legacy
+PRODUCT_NAME = SmartTube Legacy
