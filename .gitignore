@@ -58,3 +58,5 @@ tools/platform-tools/
 milika_SmartTubeIOS/
 tmp/
 *.log
+*.xml
+*.png
