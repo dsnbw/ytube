@@ -16,7 +16,8 @@ Tài liệu này hướng dẫn chi tiết cách cài đặt file `.ipa` của S
 ## 1. Phương Pháp 1: Cài Đặt Bằng TrollStore (Khuyên Dùng Nhất - Vĩnh Viễn Không Bị Thu Hồi)
 
 > [!TIP]
-> Nếu thiết bị của bạn chạy **iOS 14.0 – 15.8.3** hoặc **iOS 16.0 – 16.6.1**, TrollStore là phương pháp tuyệt vời nhất: **cài vĩnh viễn, không cần máy tính sau khi cài, không bị giới hạn 7 ngày, không cần gia hạn chứng chỉ!**
+> Nếu thiết bị của bạn chạy **iOS 14.0 – 15.8.3** hoặc **iOS 16.0 – 16.6.1**, TrollStore là phương pháp tuyệt vời nhất: **cài vĩnh viễn, không cần máy tính sau khi cài, không bị giới hạn 7 ngày, không cần gia hạn chứng chỉ!**  
+> 👉 **[Bấm vào đây để xem Hướng Dẫn Cài Đặt TrollStore Chi Tiết Cho Máy Đời Cũ](TROLLSTORE_LEGACY_GUIDE.md)**
 
 1. Tải file IPA tương ứng từ mục **[Releases](https://github.com/dsnbw/ytube/releases)** trực tiếp bằng trình duyệt **Safari** trên iPhone/iPad.
 2. Mở ứng dụng **TrollStore** trên máy.
