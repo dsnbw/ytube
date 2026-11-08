@@ -440,7 +440,7 @@ public struct SettingsView: View {
 
     private var updatesSection: some View {
         Section("Cập nhật ứng dụng") {
-            LabeledContent("Phiên bản", value: "v32.74 (Build 3274)")
+            LabeledContent("Phiên bản", value: "v32.75 (Build 3275)")
 
             Button {
                 Task {

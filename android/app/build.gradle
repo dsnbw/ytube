@@ -10,8 +10,8 @@ android {
         applicationId "com.dsnbw.smarttube"
         minSdk 19 // Android 4.4 KitKat compatibility for legacy TV boxes and tablets
         targetSdk 34
-        versionCode 3274
-        versionName "32.74"
+        versionCode 3275
+        versionName "32.75"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {

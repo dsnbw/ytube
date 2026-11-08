@@ -23,7 +23,7 @@ import java.net.URL;
 public class GitHubUpdateChecker {
     private static final String TAG = "SmartTubeUpdater";
     private static final String GITHUB_API_URL = "https://api.github.com/repos/dsnbw/ytube/releases/latest";
-    private static final String CURRENT_VERSION = "32.74";
+    private static final String CURRENT_VERSION = "32.75";
 
     public interface UpdateCallback {
         void onCheckFinished(boolean updateAvailable, String latestVersion, String downloadUrl);
