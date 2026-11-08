@@ -45,6 +45,9 @@ android/app/build/
 android/captures/
 *.apk
 !releases/*.apk
+# Exclude packages > 100MB from git commit (hosted on GitHub Releases instead)
+releases/YouTube_Official_Google_v21.30_AdFree.apk
+releases/GmsCore_Google_SignIn.apk
 *.aab
 local.properties
 .gradle/
