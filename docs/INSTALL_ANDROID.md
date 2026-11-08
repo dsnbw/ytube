@@ -6,11 +6,11 @@ SmartTube là ứng dụng YouTube nâng cao dành riêng cho hệ điều hành
 
 ## Lựa Chọn Phiên Bản APK Chuẩn Xác
 
-1. **`SmartTube_v32.72_universal.apk` (Khuyên dùng chung)**:
+1. **`SmartTube_v32.74_universal.apk` (Khuyên dùng chung)**:
    - Tương thích với **mọi dòng máy Android** (TV Box, Smart TV, Điện thoại, Máy tính bảng).
-2. **`SmartTube_v32.72_armeabi-v7a.apk` (Dành riêng cho máy đời cũ)**:
+2. **`SmartTube_v32.74_armeabi-v7a.apk` (Dành riêng cho máy đời cũ)**:
    - Tối ưu cho các dòng Android TV Box thế hệ cũ (32-bit), các tivi chip lõi tứ cũ hoặc tablet Android 4.4, 5.0, 7.0, 8.0 với RAM 1GB–2GB.
-3. **`SmartTube_v32.72_arm64-v8a.apk` (Dành cho máy hiện đại)**:
+3. **`SmartTube_v32.74_arm64-v8a.apk` (Dành cho máy hiện đại)**:
    - Dành cho Google TV, Smart TV Sony/TCL/Xiaomi đời mới 64-bit, Chromecast with Google TV 4K, Nvidia Shield TV.
 
 ---
@@ -38,7 +38,7 @@ SmartTube là ứng dụng YouTube nâng cao dành riêng cho hệ điều hành
 
 1. Dùng trình duyệt Chrome trên điện thoại/máy tính bảng truy cập:
    `https://github.com/dsnbw/ytube/releases`
-2. Bấm vào file `SmartTube_v32.72_universal.apk` để tải về.
+2. Bấm vào file `SmartTube_v32.74_universal.apk` để tải về.
 3. Khi tải xong, mở file từ thanh thông báo hoặc thư mục **Download**.
 4. Chọn **Cài đặt (Install)** và mở ứng dụng.
 

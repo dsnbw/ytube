@@ -15,8 +15,8 @@ import UIKit
 public final class AppUpdaterService: ObservableObject {
     public static let shared = AppUpdaterService()
 
-    public static let currentVersion = "32.72"
-    public static let currentBuild = "3272"
+    public static let currentVersion = "32.74"
+    public static let currentBuild = "3274"
     public static let repoOwner = "dsnbw"
     public static let repoName = "ytube"
 

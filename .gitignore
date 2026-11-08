@@ -52,7 +52,9 @@ releases/GmsCore_Google_SignIn.apk
 local.properties
 .gradle/
 
-# Temporary
+# Tools
+tools/platform-tools/
+
 milika_SmartTubeIOS/
 tmp/
 *.log
